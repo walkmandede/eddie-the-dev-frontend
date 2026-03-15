@@ -40636,7 +40636,7 @@ if(r.$2(a,j)>0){s[b]=j
 b=o}}s[b]=a}}
 A.Jk.prototype={
 M(a){var s=null,r=t.w,q=A.ar(a,s,r).w
-q=q.Oz(new A.hJ(A.ar(a,s,r).w.a.b>A.ar(a,s,r).w.a.a?0.8:1))
+q=q.Oz(new A.hJ(A.ar(a,s,r).w.a.b>A.ar(a,s,r).w.a.a?0.9:1))
 return A.rg(new A.yk(new A.xF(s),A.asn(),A.asn(),!1,s),q)}}
 A.Fx.prototype={}
 A.xY.prototype={
@@ -40926,7 +40926,7 @@ n=A.I3(B.L,A.fv(n,B.C,B.bJ,B.G,8),B.E,B.bX)
 m=A.b4(j,16,j)
 l=A.R(a).ax
 k=l.xr
-return A.jw(A.apX(A.e2(A.b([i,s,r,q,p,o,n,m,A.bz("Software engineer with experience building mobile, web, and backend applications.\nI enjoy solving challenging problems and designing clean, maintainable systems.",3,A.h5(j,j,k==null?l.k3:k,j,j,j,j,j,j,j,j,18,j,j,j,j,j,!0,j,j,j,j,j,j,j,j),B.bv),A.b4(j,32,j),A.avV(A.bz("See more about me",j,A.h5(j,j,j,j,B.ec,j,j,j,j,j,j,j,j,j,j,j,j,!0,j,j,j,j,j,j,j,j),j),new A.Zx()),A.b4(j,32,j),A.bz("Version: 1.0.3",3,A.R(a).ok.Q,B.bv)],t.p),B.C,B.bJ,B.G,0),j,new A.aG(h,g,h,g)))}}
+return A.jw(A.apX(A.e2(A.b([i,s,r,q,p,o,n,m,A.bz("Software engineer with experience building mobile, web, and backend applications.\nI enjoy solving challenging problems and designing clean, maintainable systems.",3,A.h5(j,j,k==null?l.k3:k,j,j,j,j,j,j,j,j,18,j,j,j,j,j,!0,j,j,j,j,j,j,j,j),B.bv),A.b4(j,32,j),A.avV(A.bz("See more about me",j,A.h5(j,j,j,j,B.ec,j,j,j,j,j,j,j,j,j,j,j,j,!0,j,j,j,j,j,j,j,j),j),new A.Zx()),A.b4(j,32,j),A.bz("Version: 1.0.4",3,A.R(a).ok.Q,B.bv)],t.p),B.C,B.bJ,B.G,0),j,new A.aG(h,g,h,g)))}}
 A.Zw.prototype={
 $1(a){var s,r=null,q=A.iP(1e4),p=this.a,o=A.R(p).ax.k2
 o=A.aI(150,o.D()>>>16&255,o.D()>>>8&255,o.D()&255)
