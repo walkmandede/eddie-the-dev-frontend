@@ -2,6 +2,7 @@ import 'package:eddie_the_dev_frontend/core/constants/app_assets.dart';
 import 'package:eddie_the_dev_frontend/core/constants/app_constants.dart';
 import 'package:eddie_the_dev_frontend/core/shared/extensions/build_context_extension.dart';
 import 'package:eddie_the_dev_frontend/core/shared/extensions/double_extension.dart';
+import 'package:eddie_the_dev_frontend/src/controllers/app_controller.dart';
 import 'package:eddie_the_dev_frontend/src/features/eddie/eddie_page_controller.dart';
 import 'package:eddie_the_dev_frontend/src/features/home/home_page.dart';
 import 'package:eddie_the_dev_frontend/src/features/home/home_page_controller.dart';
@@ -91,6 +92,13 @@ class EddieHWidget extends StatelessWidget {
                 'See more about me',
                 style: TextStyle(decoration: TextDecoration.underline),
               ),
+            ),
+            kBasePaddingL.heightBox(),
+            Text(
+              'Version: ${AppController.appVersion}',
+              style: context.textTheme.bodySmall,
+              maxLines: 3,
+              textAlign: TextAlign.center,
             ),
           ],
         ),
