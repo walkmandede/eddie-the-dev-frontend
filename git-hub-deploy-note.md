@@ -1,14 +1,13 @@
 ## first deploy
 # Build the web app
-flutter build web --release --base-href "/eddie-the-dev/"
-
+flutter build web --release --base-href "/eddie-the-dev-frontend/"
 # Deploy to gh-pages branch
 git checkout --orphan gh-pages
 git rm -rf .
 cp -r build/web/* .
 git add .
 git commit -m "Deploy to GitHub Pages"
-git push origin gh-pages --force
+git push origin github-page --force
 git checkout main
 
 
