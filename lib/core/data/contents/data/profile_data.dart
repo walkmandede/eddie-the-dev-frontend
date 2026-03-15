@@ -8,6 +8,9 @@ final Profile profileData = Profile(
   yearsOfExperience: 4,
   avatarUrl: "assets/profile/profile.jpg",
   bio: """
+
+Hi! I'm Eddie. My real name is Kyaw Phyoe Han. I was originally from Yangon, Myanmar, currently living in Bangkok, Thailand.
+
 I am a software engineer with experience building scalable applications across mobile, web, and backend systems. My work focuses on designing reliable software solutions, writing maintainable code, and solving complex technical problems.
 
 Throughout my career, I have contributed to production systems such as ride-hailing platforms, internal management tools, and service-based applications. Some of the applications I have worked on have reached tens of thousands of users, including production apps with over 100K downloads on the Google Play Store.
