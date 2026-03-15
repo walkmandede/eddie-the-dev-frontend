@@ -22,9 +22,9 @@ class ProjectsHWidget extends StatelessWidget {
         controller: scrollController,
         thumbVisibility: true,
         child: ListView.separated(
-          padding: const EdgeInsets.symmetric(
-            horizontal: kBasePaddingL,
-            vertical: kBasePaddingL,
+          padding: EdgeInsets.symmetric(
+            horizontal: context.isVertical() ? kBasePaddingM : kBasePaddingL,
+            vertical: context.isVertical() ? kBasePaddingM : kBasePaddingL,
           ),
           controller: scrollController,
           itemCount: projectsData.length,
@@ -41,7 +41,10 @@ class ProjectsHWidget extends StatelessWidget {
   Widget _project(BuildContext context, Project project) {
     return BaseCard(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: kBasePaddingL, vertical: kBasePaddingM),
+        padding: EdgeInsets.symmetric(
+          horizontal: context.isVertical() ? kBasePaddingM : kBasePaddingL,
+          vertical: context.isVertical() ? kBasePaddingM : kBasePaddingL,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -52,6 +55,7 @@ class ProjectsHWidget extends StatelessWidget {
             kBasePaddingS.heightBox(),
             Wrap(
               spacing: kBasePaddingS,
+              runSpacing: kBasePaddingS,
               children: [
                 ...project.badges.map((b) {
                   return DecoratedBox(
@@ -84,12 +88,18 @@ class ProjectsHWidget extends StatelessWidget {
             ),
             kBasePaddingS.heightBox(),
             ...project.highlights.map((h) {
-              return Text(
-                '-  $h',
-                style: context.textTheme.titleMedium?.copyWith(
-                  fontFamily: AppTheme.fontNunito,
-                  height: 2,
-                ),
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    h,
+                    style: context.textTheme.titleMedium?.copyWith(
+                      fontFamily: AppTheme.fontNunito,
+                      height: 1.5,
+                    ),
+                  ),
+                  kBasePaddingS.heightBox(),
+                ],
               );
             }),
             if (project.screenshots.isNotEmpty)

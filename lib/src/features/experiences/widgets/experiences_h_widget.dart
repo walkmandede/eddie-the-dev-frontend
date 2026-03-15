@@ -19,9 +19,9 @@ class ExperienceHWidget extends StatelessWidget {
         controller: scrollController,
         thumbVisibility: true,
         child: ListView.separated(
-          padding: const EdgeInsets.symmetric(
-            horizontal: kBasePaddingL,
-            vertical: kBasePaddingL,
+          padding: EdgeInsets.symmetric(
+            horizontal: context.isVertical() ? kBasePaddingM : kBasePaddingL,
+            vertical: context.isVertical() ? kBasePaddingM : kBasePaddingL,
           ),
           controller: scrollController,
           itemCount: experiencesData.length,
@@ -38,18 +38,16 @@ class ExperienceHWidget extends StatelessWidget {
   Widget _experience(BuildContext context, Experience experience) {
     return BaseCard(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: kBasePaddingL, vertical: kBasePaddingM),
+        padding: EdgeInsets.symmetric(
+          horizontal: context.isVertical() ? kBasePaddingM : kBasePaddingL,
+          vertical: context.isVertical() ? kBasePaddingM : kBasePaddingL,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                Text(
-                  '${experience.company} (${experience.jobNatureEnum.label} - ${experience.jobTypeEnum.label})',
-                  style: context.textTheme.titleMedium,
-                ),
-                const Spacer(),
-              ],
+            Text(
+              '${experience.company} (${experience.jobNatureEnum.label} - ${experience.jobTypeEnum.label})',
+              style: context.textTheme.titleMedium,
             ),
             Text(
               experience.location,
@@ -70,12 +68,17 @@ class ExperienceHWidget extends StatelessWidget {
             ),
             kBasePaddingS.heightBox(),
             ...experience.description.map(
-              (d) => Text(
-                '-  $d',
-                style: context.textTheme.labelLarge?.copyWith(
-                  fontFamily: AppTheme.fontNunito,
-                  height: 2,
-                ),
+              (d) => Column(
+                children: [
+                  Text(
+                    d,
+                    style: context.textTheme.labelLarge?.copyWith(
+                      fontFamily: AppTheme.fontNunito,
+                      height: 1.5,
+                    ),
+                  ),
+                  kBasePaddingS.heightBox(),
+                ],
               ),
             ),
           ],

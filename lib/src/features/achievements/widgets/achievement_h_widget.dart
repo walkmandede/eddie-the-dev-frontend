@@ -53,6 +53,18 @@ class AchievementHWidget extends StatelessWidget {
                   height: double.infinity,
                 ),
                 Align(
+                  alignment: Alignment.topRight,
+                  child: BaseCard(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: kBasePaddingM / 2, vertical: kBasePaddingS / 2),
+                      child: Text(
+                        DateFormat('MMM, yyyy').format(achievement.issuedDate),
+                        style: context.textTheme.labelSmall,
+                      ),
+                    ),
+                  ),
+                ),
+                Align(
                   alignment: Alignment.bottomCenter,
                   child: DecoratedBox(
                     decoration: BoxDecoration(
@@ -90,11 +102,6 @@ class AchievementHWidget extends StatelessWidget {
                                             ),
                                           ],
                                         ),
-                                      ),
-                                      const Spacer(),
-                                      Text(
-                                        DateFormat('MMM, yyyy').format(achievement.issuedDate),
-                                        style: context.textTheme.labelSmall,
                                       ),
                                     ],
                                   ),

@@ -96,11 +96,17 @@ class AchievementDetailWidget extends StatelessWidget {
                   ),
                   kBasePaddingS.heightBox(),
                   ...achievement.newSkills.map(
-                    (n) => Text(
-                      '- $n',
-                      style: context.textTheme.titleMedium?.copyWith(
-                        fontFamily: AppTheme.fontNunito,
-                      ),
+                    (n) => Column(
+                      children: [
+                        Text(
+                          n,
+                          style: context.textTheme.titleMedium?.copyWith(
+                            fontFamily: AppTheme.fontNunito,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        kBasePaddingS.heightBox(),
+                      ],
                     ),
                   ),
                   const Divider(),
@@ -111,11 +117,17 @@ class AchievementDetailWidget extends StatelessWidget {
                   ),
                   kBasePaddingS.heightBox(),
                   ...achievement.improvedSkills.map(
-                    (n) => Text(
-                      '- $n',
-                      style: context.textTheme.titleMedium?.copyWith(
-                        fontFamily: AppTheme.fontNunito,
-                      ),
+                    (n) => Column(
+                      children: [
+                        Text(
+                          n,
+                          style: context.textTheme.titleMedium?.copyWith(
+                            fontFamily: AppTheme.fontNunito,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        kBasePaddingS.heightBox(),
+                      ],
                     ),
                   ),
                 ],

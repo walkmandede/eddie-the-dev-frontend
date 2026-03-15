@@ -18,9 +18,9 @@ class AboutHWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox.expand(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: kBasePaddingL,
-          vertical: kBasePaddingL,
+        padding: EdgeInsets.symmetric(
+          horizontal: context.isVertical() ? kBasePaddingM : kBasePaddingL,
+          vertical: context.isVertical() ? kBasePaddingM : kBasePaddingL,
         ),
         child: BaseCard(
           child: _body(context),
