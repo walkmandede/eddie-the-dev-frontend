@@ -1,6 +1,6 @@
 ## first deploy
 # Build the web app
-flutter build web --release --base-href "/pg1-love-dna/"
+flutter build web --release --base-href "/eddie-the-dev/"
 
 # Deploy to gh-pages branch
 git checkout --orphan gh-pages
