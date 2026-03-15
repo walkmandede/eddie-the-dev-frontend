@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:eddie_the_dev_frontend/core/services/firebase_service.dart';
 import 'package:eddie_the_dev_frontend/src/models/user_info.dart';
 import 'package:flutter/material.dart';
