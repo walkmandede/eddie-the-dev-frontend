@@ -2,7 +2,7 @@
 # Build the web app
 flutter build web --wasm --base-href "/eddie-the-dev-frontend/"
 # Deploy to gh-pages branch
-git checkout --orphan gh-pages
+git checkout --orphan github-page
 git rm -rf .
 cp -r build/web/* .
 git add .

@@ -4,15 +4,13 @@ import 'package:eddie_the_dev_frontend/core/services/firebase_service.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   final firebaseService = FirebaseService();
   final userInfoRepo = UserInfoRepo(firebaseService: firebaseService);
 
-  try {
-    await firebaseService.init();
-    await userInfoRepo.saveUserInfo();
-  } catch (e) {
-    debugPrint(e.toString());
-  }
+  await firebaseService.init();
+  await userInfoRepo.saveUserInfo();
 
   runApp(const MainApp());
 }

@@ -12,4 +12,8 @@ class FirebaseService {
   Future<DocumentReference> saveADocument({required String collectionId, required Map<String, dynamic> data}) async {
     return await FirebaseFirestore.instance.collection(collectionId).add(data);
   }
+
+  Future<QuerySnapshot> getDocuments({required String collectionId}) async {
+    return await FirebaseFirestore.instance.collection(collectionId).get();
+  }
 }

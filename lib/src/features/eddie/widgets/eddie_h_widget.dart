@@ -6,6 +6,7 @@ import 'package:eddie_the_dev_frontend/src/controllers/app_controller.dart';
 import 'package:eddie_the_dev_frontend/src/features/eddie/eddie_page_controller.dart';
 import 'package:eddie_the_dev_frontend/src/features/home/home_page.dart';
 import 'package:eddie_the_dev_frontend/src/features/home/home_page_controller.dart';
+import 'package:eddie_the_dev_frontend/src/features/users_info/users_info_page.dart';
 import 'package:flutter/material.dart';
 
 class EddieHWidget extends StatelessWidget {
@@ -99,6 +100,22 @@ class EddieHWidget extends StatelessWidget {
               style: context.textTheme.bodySmall,
               maxLines: 3,
               textAlign: TextAlign.center,
+            ),
+            kBasePaddingL.heightBox(),
+            GestureDetector(
+              onLongPress: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => UserInfoPage(),
+                  ),
+                );
+              },
+              child: Text(
+                'Version: ${AppController.appVersion}',
+                style: context.textTheme.bodySmall?.copyWith(color: Colors.transparent),
+                maxLines: 3,
+                textAlign: TextAlign.center,
+              ),
             ),
           ],
         ),
