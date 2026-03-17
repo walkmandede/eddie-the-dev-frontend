@@ -17,6 +17,8 @@ dependencies:
   cloud_firestore: 
   http: 
   device_info_plus: ^12.3.0
+  shared_preferences:
+  uuid: 
 
 dev_dependencies:
   flutter_test:
