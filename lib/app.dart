@@ -9,7 +9,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MediaQuery(
-      data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(context.isVertical() ? 0.9 : 1)),
+      data: MediaQuery.of(context).copyWith(textScaler: TextScaler.linear(context.isVertical() ? 0.75 : 1)),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: AppTheme.dark(),
