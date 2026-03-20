@@ -1,8 +1,7 @@
 import 'package:eddie_the_dev_frontend/core/data/contents/data/all_data.dart';
 
 void main() async {
-  final content = await printContent();
-  print(content);
+  // final content = await printContent();
 }
 
 Future<String> printContent() async {

@@ -70,4 +70,44 @@ class UserInfoRepo {
 
     return userInfos;
   }
+
+  Future<void> updateVisitedSection(String sectionName) async {
+    try {
+      final visitorId = await UuidService.getVisitorId();
+      final docRef = FirebaseFirestore.instance.collection(_collectionId).doc(visitorId);
+
+      await docRef.update({
+        'visitedSections': FieldValue.arrayUnion([sectionName]),
+        'lastVisitedSection': sectionName,
+        'lastSeen': DateTime.now().toUtc(),
+      });
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
+
+  Future<void> saveContactMessage({
+    required String name,
+    required String email,
+    required String message,
+  }) async {
+    try {
+      final visitorId = await UuidService.getVisitorId();
+
+      await FirebaseFirestore.instance.collection('contact_messages').add({
+        'visitorId': visitorId,
+        'name': name,
+        'email': email,
+        'message': message,
+        'sentAt': DateTime.now().toUtc(),
+      });
+
+      await FirebaseFirestore.instance.collection(_collectionId).doc(visitorId).update({
+        'hasContacted': true,
+        'lastContactedAt': DateTime.now().toUtc(),
+      });
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 }

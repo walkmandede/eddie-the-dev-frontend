@@ -19,6 +19,8 @@ dependencies:
   device_info_plus: ^12.3.0
   shared_preferences:
   uuid: 
+  free_scroll_listview: ^2.0.16
+  flutter_markdown: ^0.7.7+1
 
 dev_dependencies:
   flutter_test:
