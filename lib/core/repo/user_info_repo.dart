@@ -31,6 +31,9 @@ class UserInfoRepo {
   }
 
   Future<void> saveUserInfo() async {
+    if (kDebugMode) {
+      return;
+    }
     try {
       final visitorId = await UuidService.getVisitorId();
       final userInfo = await _getDeviceUserInfo();

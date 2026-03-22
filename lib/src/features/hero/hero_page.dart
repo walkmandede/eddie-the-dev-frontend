@@ -12,78 +12,77 @@ class HeroPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (context.isVertical()) return _vLayout(context);
     return SizedBox(
       width: double.infinity,
       height: context.screenHeight() - kToolbarHeight,
-      child: context.isVertical() ? _vLayout(context) : _hLayout(context),
+      child: _hLayout(context),
     );
   }
 
   Widget _vLayout(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 48),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _Avatar(size: min(120, context.screenWidth() * 0.28)),
-            const SizedBox(height: 28),
-            _AvailabilityBadge(),
-            const SizedBox(height: 20),
-            Text(
-              profileData.name,
-              style: context.textTheme.displaySmall?.copyWith(
-                fontWeight: FontWeight.w700,
-                height: 1.2,
-              ),
-              textAlign: TextAlign.center,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 48),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          _Avatar(size: min(120, context.screenWidth() * 0.28)),
+          const SizedBox(height: 28),
+          _AvailabilityBadge(),
+          const SizedBox(height: 20),
+          Text(
+            profileData.name,
+            style: context.textTheme.displaySmall?.copyWith(
+              fontWeight: FontWeight.w700,
+              height: 1.2,
             ),
-            const SizedBox(height: 10),
-            _TitleChip(),
-            const SizedBox(height: 20),
-            Text(
-              profileData.bio,
-              style: context.textTheme.bodyMedium?.copyWith(
-                fontSize: 14,
-                height: 1.7,
-                color: context.isDark ? AppColors.darkTextSecondary : AppColors.lightTextSecondary,
-              ),
-              textAlign: TextAlign.center,
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 10),
+          _TitleChip(),
+          const SizedBox(height: 20),
+          Text(
+            profileData.bio,
+            style: context.textTheme.bodyMedium?.copyWith(
+              fontSize: 14,
+              height: 1.7,
+              color: context.isDark ? AppColors.darkTextSecondary : AppColors.lightTextSecondary,
             ),
-            const SizedBox(height: 32),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 46,
-                  child: ElevatedButton.icon(
-                    onPressed: () => homePageController.onClickTab(EnumHomePageSection.projects),
-                    icon: const Icon(Icons.work_outline_rounded, size: 16),
-                    label: const Text('View Work'),
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                    ),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 32),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 46,
+                child: ElevatedButton.icon(
+                  onPressed: () => homePageController.onClickTab(EnumHomePageSection.projects),
+                  icon: const Icon(Icons.work_outline_rounded, size: 16),
+                  label: const Text('View Work'),
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                   ),
                 ),
-                const SizedBox(width: 12),
-                SizedBox(
-                  height: 46,
-                  child: OutlinedButton.icon(
-                    onPressed: () => homePageController.onClickTab(EnumHomePageSection.contact),
-                    icon: const Icon(Icons.mail_outline_rounded, size: 16),
-                    label: const Text('Contact Me'),
-                    style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                    ),
+              ),
+              const SizedBox(width: 12),
+              SizedBox(
+                height: 46,
+                child: OutlinedButton.icon(
+                  onPressed: () => homePageController.onClickTab(EnumHomePageSection.contact),
+                  icon: const Icon(Icons.mail_outline_rounded, size: 16),
+                  label: const Text('Contact Me'),
+                  style: OutlinedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                   ),
                 ),
-              ],
-            ),
-            const SizedBox(height: 40),
-            _SpecialtyList(),
-            const SizedBox(height: 32),
-          ],
-        ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 40),
+          _SpecialtyList(),
+          const SizedBox(height: 32),
+        ],
       ),
     );
   }
