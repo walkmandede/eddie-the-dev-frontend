@@ -19,6 +19,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool _didPreCache = false;
+
   @override
   void initState() {
     homePageController.initLoad();
@@ -29,6 +31,17 @@ class _HomePageState extends State<HomePage> {
   void dispose() {
     homePageController.dispose();
     super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_didPreCache) {
+      _didPreCache = true;
+      precacheImage(const AssetImage('assets/images/bg_1.jpg'), context);
+      precacheImage(const AssetImage('assets/images/bg_2.png'), context);
+      precacheImage(const AssetImage('assets/profile/profile.jpg'), context);
+    }
   }
 
   @override
@@ -53,7 +66,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           //lightbar
-          const HomePageBorderLightBar(),
+          // const HomePageBorderLightBar(),
           //display
           Scaffold(
             backgroundColor: Colors.transparent,
